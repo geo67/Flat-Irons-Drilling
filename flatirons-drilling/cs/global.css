@@ -1,0 +1,549 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------//
+
+theme name: Flatirons Drilling
+description: Company Web site
+version: 1.0
+author: George Robinson
+author URI: 
+
+//------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------//
+
+table of contents:
+------------------
+	01. E Meyers Reset
+	---------------------
+	02. theme definitions
+	---------------------
+		02a. main page
+		02b. content/carousel
+		02c. nav-system 
+		02d. footer
+		02e. opposite layout pages
+		02f. projects page
+		02g. careers page
+		02h. contact page
+	---------------------
+
+	06. non-semantic helper classes
+
+//------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------------//
+	01. E Meyers Reset
+//------------------------------------------------------------------------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*------------------------------------------------------------------------//
+	02a. Main page
+//------------------------------------------------------------------------*/
+
+body{
+
+	background-color:#fff;
+	font-family:arial, sans-serif;
+	color:#221f1f;
+	margin:0;
+	padding:0;
+}
+
+h2, h3{
+	font-size:26px;
+	font-family:impact, sans-serif;
+	color:#989898;
+	margin-bottom:12px;
+}
+ 
+h2{
+	font-size:30px;
+}
+h3 {
+	font-size:23px;
+}
+
+p{
+	color:#151414;
+}
+.page-wrapper{
+	width:960px;
+	height:768px;
+	padding-top:10px;
+	margin:0 auto;
+}
+
+#header{
+	width:100%;
+	height:125px;
+	border-top:3px solid #000;
+	padding-top:18px;
+	margin-bottom:-10px;
+	float:left;
+}
+
+.logo-cont {
+	width:240px;
+	float:left;
+}
+.address{
+	float:right;
+	line-height:25px;
+}
+
+.address li{
+	color:#999999;
+}
+
+.address span{
+	font-size:16px;
+	color:#151414;
+	margin-left:23px;
+}
+
+.address li:last-child span{
+	margin-left:45px;
+}
+
+
+/*------------------------------------------------------------------------//
+	02ab. Content
+//------------------------------------------------------------------------*/
+
+.content{
+	display:block;
+	margin:0 auto;
+}
+
+
+#carousel-wrapper{
+	width:960px;
+	margin:0 auto;
+	margin-bottom:7px;
+}
+
+#slides{
+	overflow:hidden;
+	position:relative;
+	height:500px;
+	border:1px solid #ccc;
+	box-shadow: 0 0 12px #CCCCCC;	
+}
+
+#slides ul{
+	position:relative;
+	left:0;
+	top:0;
+	list-style:none;
+	margin:0;
+	padding:0;
+	width:4800px;
+}
+
+#slides li{
+	width:960px;
+	height:500;
+	float:left;
+}
+
+#slides li img {
+	padding:0;
+}
+
+#carousel-buttons {
+	height: 46px;
+	left: 709px;
+	opacity: 0.85;
+	padding: 0 0 5px;
+	position: relative;
+	top: 376px;
+	z-index: 10;
+}
+
+#carousel-buttons a {
+	display: block;
+	height: 46px;
+	text-indent: -9999px;
+	width: 26px;
+}
+
+a#prev {
+	background: url("../imgs/arrow-left.png") no-repeat scroll 0 0 transparent;
+	left: -691px;
+	position: absolute;
+}
+
+a#prev:hover{
+	background:url("../imgs/arrow-left.png") 0 -46px no-repeat;
+}
+
+a#next {
+	background: url("../imgs/arrow-right.png") no-repeat scroll 0 0 transparent;
+	position: absolute;
+	right: 723px;
+}
+a#next:hover{
+	background:url("../imgs/arrow-right.png") 0px -46px no-repeat;
+}
+
+.clear {clear:both;}
+
+.main-col{
+	width:60%;
+	line-height:20px;
+	padding:1%;
+	float:left;
+}
+
+.main-col p, aside p{
+	margin-bottom:8px;
+	margin-top:20px;
+}
+
+.info-wrapper{
+	margin-top:15px;
+}
+
+.h-line {
+	background-color: #CCCCCC;
+	float: left;
+	height: 386px;
+	margin-bottom:15px;
+	margin-left: 15px;
+	margin-top: 25px;
+	padding-top: 15px;
+	width: 1px;
+}
+
+aside{
+	width:30%;
+	padding:1%;
+	float:left;
+	margin-left:23px;
+	line-height:20px;
+}
+
+aside p{
+	width:99%;
+	margin-left:2px;
+}
+
+aside img {
+	margin-top:8px;
+	box-shadow:0 0 12px #ccc;
+}
+
+/*------------------------------------------------------------------------//
+	02c. Nav system
+//------------------------------------------------------------------------*/
+
+#nav{
+	clear:both;
+	width:100%;
+	margin-top:-10px;
+	box-shadow:0 0 12px #ccc;
+}
+
+.nav-system{
+	background:url("../imgs/nav-bg.png") 0 0 repeat-x;
+	font-size:13px;
+	height:50px;
+}
+
+.nav-system li{
+	float:left;
+	border-right:1px solid #ccc;
+}
+
+.nav-system a {
+    color: #FFFFFF;
+    border-right:1px solid #999;
+    display: block;
+    font-weight: 600;
+    height: 25px;
+    padding: 20px 5px 5px 32px;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 96px;
+    text-shadow:1px 1px 2px #666;	
+}
+
+.nav-system a:hover{
+	background:url("../imgs/nav-bg-hover.png") 0 0 repeat-x;
+    color: #222;
+    display: block;
+    font-weight: 600;
+    height: 25px;
+    padding: 20px 5px 5px 32px;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 96px;
+    text-shadow:1px 1px 2px #ccc;	
+}
+
+.nav-system .current{
+	background-color:#ccc;
+    color: #151414;
+    display: block;
+    font-weight: bold;
+    height: 25px;
+    padding: 20px 5px 5px 32px;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 96px;
+    text-shadow:1px 1px 2px #666;	
+}
+
+.nav-system .last-child{
+	border-right:none;
+}
+.nav-system .last-child a{
+	border-right:none;
+	width:110px;
+}
+.nav-system .last-child a:hover{
+	padding-right:0;
+	width:116px;
+}
+
+.nav-system .last-child .current{
+	width:118px;
+	padding-right:0;
+	border-right:none;
+}
+/*------------------------------------------------------------------------//
+	02d. Footer
+//------------------------------------------------------------------------*/
+
+#footer {
+  border-top: 3px solid #000;
+  clear: both;
+  display: block;
+  font-size: 12px;
+  padding-bottom: 25px;
+  padding-top: 20px;
+  text-transform: uppercase;
+  width: 960px;
+}
+
+#footer ul{
+	list-style:none;
+	margin-left:16%;
+}
+
+#footer li{
+	float:left;
+	display:inline;
+	margin-right:20px;
+}
+#footer a{
+	text-decoration:none;
+	color:#000;
+}
+
+#footer a:hover{
+	color:#ccc;
+}
+
+/*------------------------------------------------------------------------//
+	02e. Opposite layout pages
+//------------------------------------------------------------------------*/
+
+.aside-opposite{
+    float: left;
+    line-height: 20px;
+    margin-left: 0;
+    margin-right:15px;
+    padding: 1% 1% 1% 0;
+    width: 30%;
+}
+
+.main-col-opposite{
+	margin-left:15px;
+	float:left;
+	width:63%;
+}
+
+.main-col-opposite p{
+	margin-bottom:8px;
+	margin-top:20px;
+}
+
+.main-col-opposite ul {
+  line-height: 20px;
+  list-style: disc outside none;
+  margin-left: 68px;
+}
+
+.main-col-opposite img {
+  box-shadow: 0 0 12px #CCCCCC;
+  margin-bottom: 15px;
+  margin-left: 25px;
+  margin-top: 15px;
+}
+
+/*------------------------------------------------------------------------//
+	02e. Careers pages
+//------------------------------------------------------------------------*/
+
+.main-col-careers{
+	width:100%;
+}
+
+fieldset {
+	border-radius:5px;
+	box-shadow:0 0 12px #ccc;
+	padding:15px;
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+form {
+	margin-left: 120px;
+	margin-top: 20px;
+	text-align: right;
+	width: 500px;
+}
+
+input{
+	height: 21px;
+	margin-bottom: 18px;
+	margin-left: 8px;
+	padding-left: 5px;
+	width: 250px;
+}
+
+.personal-info-cont{
+	margin-left:125px;
+}
+
+.personal-info-cont p {
+  margin-left: -38px;
+  text-align: center;
+  width: 532px;
+  margin-top: 15px;
+}
+
+textarea{
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+#careers .main-col-careers a{
+	color:#aaa;
+}
+
+#careers fieldset .btn-browse{
+   height: 25px;
+   width: 255px;
+}
+
+#careers fieldset .btn{
+   height: 30px;
+   width: 70px;
+   display:block;
+   margin-left:325px;
+}
+
+/*------------------------------------------------------------------------//
+	02f. Projects pages
+//------------------------------------------------------------------------*/
+
+#projects .projects-cont {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	padding-right: 25px;
+	width: 560px;
+	height:450px;
+}
+
+#projects .projects-info-cont .main-col{
+	float:left;
+	border-bottom:1px solid #ccc;
+	width:100%;
+	font-weight:600;
+	color:;
+	padding-bottom:0;
+}
+
+#projects .projects-info-cont .main-col p{
+    float: left;
+    margin-bottom: 5px;
+    margin-top: 0;
+    margin-left:-6px;
+}
+
+#projects .projects-info-cont .main-col span{
+	float:right;
+}
+
+#projects  .project-info{
+	color:#999;
+	font-size:12px;
+}
+
+/*------------------------------------------------------------------------//
+	02g-. Contact pages
+//------------------------------------------------------------------------*/
+
+#contact .main-col img{
+	margin-top:10px;
+	 box-shadow: 0 0 12px #CCCCCC;
+}
+
+#contact aside p{
+	margin-bottom:0px;
+}
+#contact aside a{
+	color:#999;
+	font-size:12px;
+}

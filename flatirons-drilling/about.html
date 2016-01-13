@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+
+<html>
+
+	<!-- Basic Page Needs
+	================================================== -->
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+ 		<meta name="keywords" content="" /> 
+		<meta name="author" content="" />
+
+        <link rel="stylesheet" type="text/css" href="../cs/global.css"/>
+        <!--[if lte IE 9]>
+         <link rel="stylesheet" type="text/css" href="css/assignment_04_george_robinson_ie.css"/>
+        <![endif]-->
+
+        <title>Flatirons Drilling About Page | Greeley CO</title> 
+
+    </head>
+
+	<body id="about">
+
+		<div class="page-wrapper"> <!-- start page wrapper-->
+
+			<div id="header"> <!-- start header-->
+
+				<a href="index.html">
+					<div class="logo-cont">
+						<img src="imgs/logo.png" alt="Flatirons Drilling Logo"/>
+					</div>
+				</a>
+				<ul class="address">
+
+					<li>2009 2nd Avenue</li>
+					<li>Greeley, Colorado 80631</li>
+					<li>PHONE<span>970.356.1444</span></li>
+					<li>FAX	<span>970.353.0222</span></li>
+
+				</ul>
+
+			</div><!-- end header-->
+
+			<div class="content"><!-- content starts here-->
+
+				<div id="carousel-wrapper"><!-- carousel starts here carousel is only used on home page-->
+
+					<div class="clear"></div>
+
+				    <div id="slides">
+
+						<img src="../imgs/slides/about-page.png" width="960" height="500" alt="Slide 1"/>
+
+						<div class="clear"></div>
+
+				    </div>
+
+				</div><!-- carousel ends here-->
+
+				<div id="nav"><!-- start nav-->
+
+					<ul class="nav-system">
+
+						<li class="first-child"><a href="index.html">Home</a></li>
+						<li><a href="about.html" class="current">About</a></li>			
+						<li><a href="services.html">Services</a></li>		
+						<li><a href="projects.html">Projects</a></li>			
+						<li><a href="safety.html">Safety</a></li>		
+						<li><a href="careers.html">Careers</a></li>				
+						<li class="last-child"><a href="contact.html">Contact</a></li>
+
+					</ul>
+
+				</div><!-- end nav-->
+
+				<div class="info-wrapper">
+					<div class="main-col">
+						<h2>About the Flatirons Drilling Team</h2>
+						<p>At Flatirons Drilling, our management team brings to your project years of leadership service to the Directional Drilling and the Oil and Gas industry. Our professionals have a proven record of excellence in project management that includes overseeing every aspect of a project from start to finish, and assigning the best industry experienced professionals in their respective fields to fill the vast needs of each project. 
+						</p>
+						<p>The quality and experience our team at Flatirons Drilling possesses enables your project to stay on track and remain well within budget.</p>
+						<p>Flatirons Drilling is a growing company, constantly striving for new clients, that demand quality work at a great value. 
+					</div>
+
+					<div class="h-line"></div>
+
+					<aside>
+						<h3>Equipment...</h3>
+						<p>Flatirons Drilling owns an extensive array of construction and drilling equipment, maintained to the highest level of quality.</p>
+						<p>To continue our service for our customers we are always expanding this list of available equipment, so the equipment necessary for all types of projects is where we need it, when we need it.</p>
+						<img src="../imgs/small-pics/about-small.png" alt="trucks" width="312" height="155"/>
+					</aside>
+				</div>
+
+			</div><!-- content ends here-->
+
+			<div id="footer"><!-- start footer-->
+				<ul>
+					<li><a href="index.html">home</a></li>
+					<li>|</li>
+					<li><a href="about.html">about</a></li>
+					<li>|</li>
+					<li><a href="services.html">services</a></li>
+					<li>|</li>
+					<li><a href="projects.html">projects</a></li>
+					<li>|</li>
+					<li><a href="safety.html">safety</a></li>
+					<li>|</li>
+					<li><a href="careers.html">careers</a></li>
+					<li>|</li>
+					<li><a href="contact.html">contact</a></li>
+				</ul>
+			</div><!-- end footer-->
+		</div><!-- end page wrapper-->
+
+
+	<script type="text/javascript" src="./js/jquery-1.8.3.min.js"></script>
+	<script>
+	$(document).ready(function() {
+	    //rotation speed and timer
+	    var speed = 5000;
+	    var run = setInterval('rotate()', speed);    
+	    
+	    //grab the width and calculate left value
+	    var item_width = $('#slides li').outerWidth();
+	    var left_value = item_width * (-1);
+	//move the last item before first item, just in case user click prev button
+	    $('#slides li:first').before($('#slides li:last'));
+	    
+	    //set the default item to the correct position
+	    $('#slides ul').css({'left' : left_value});
+	//if user clicked on prev button
+	    $('#prev').click(function() {
+	        //get the right position
+	        var left_indent = parseInt($('#slides ul').css('left')) + item_width;
+	        //slide the item
+	        $('#slides ul').animate({'left' : left_indent}, 200,function(){
+	//move the last item and put it as first item     
+	            $('#slides li:first').before($('#slides li:last'));
+	            //set the default item to correct position
+	            $('#slides ul').css({'left' : left_value});
+	        
+	        });
+	        //cancel the link behavior
+	        return false;
+	    });
+	//if user clicked on next button
+	    $('#next').click(function() {
+	        
+	        //get the right position
+	        var left_indent = parseInt($('#slides ul').css('left')) - item_width;
+	        
+	        //slide the item
+	        $('#slides ul').animate({'left' : left_indent}, 200, function () {
+	//move the first item and put it as last item
+	            $('#slides li:last').after($('#slides li:first'));     
+	            
+	            //set the default item to correct position
+	            $('#slides ul').css({'left' : left_value});
+	        
+	        });
+	        
+	        //cancel the link behavior
+	        return false;
+	        
+	    });
+	    
+	    //if mouse hover, pause the auto rotation, otherwise rotate it
+	    $('#slides').hover(
+	        
+	        function() {
+	            clearInterval(run);
+	        },
+	        function() {
+	            run = setInterval('rotate()', speed);    
+	        }
+	    );
+	});
+	//a simple function to click next link
+	//a timer will call this function, and the rotation will begin :)
+	function rotate() {
+	    $('#next').click();
+	}
+</script>
+	</body>
+
+
+</html>
